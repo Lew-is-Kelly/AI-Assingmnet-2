@@ -111,8 +111,19 @@ public class Main {
     return true;
   }
 
+  /**
+   * Places a queen at the provided coordinates if it is valid.
+   *
+   * @param posX X coordinate
+   * @param posY Y coordinate
+   * @param grid grid of queen locations
+   */
   public static void placeQueen(int posX, int posY, boolean[][] grid) {
-    grid[posX][posY] = true;
+    if (canPlace(posX, posY, grid)) {
+      grid[posX][posY] = true;
+    } else {
+      System.out.println("Invalid");
+    }
   }
 
   // New Function Here
@@ -127,6 +138,7 @@ public class Main {
     placeQueen(0, 0, grid);
 
     System.out.printf("%b\n", canPlace(3, 0, grid));
+    placeQueen(1,2,grid);
 
     printGrid(grid);
   }
