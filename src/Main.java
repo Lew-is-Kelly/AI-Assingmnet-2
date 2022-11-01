@@ -114,6 +114,8 @@ public class Main {
     grid[posX][posY] = true;
   }
 
+  // New Function Here
+
   /**
    * Main.
    */
