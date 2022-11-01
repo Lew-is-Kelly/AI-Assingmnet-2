@@ -48,7 +48,7 @@ public class Main {
    * @param grid Boolean grid of the board.
    * @return true if the position is not under attack.
    */
-  public static boolean canPlace (int posX, int posY, boolean[][] grid) {
+  public static boolean canPlace(int posX, int posY, boolean[][] grid) {
     // Check place provided if queen is present
     if (grid[posX][posY]) {
       return false;
@@ -57,8 +57,6 @@ public class Main {
     for (int i = 1; i < grid.length; i++) {
       int upX = posX + i;
       int dnX = posX - i;
-      int upY = posY + i;
-      int dnY = posY - i;
 
       //Check horizontal
       if (upX <= grid.length - 1) {
@@ -71,6 +69,9 @@ public class Main {
           return false;
         }
       }
+
+      int upY = posY + i;
+      int dnY = posY - i;
 
       // Check vertical
       if (upY <= grid.length - 1) {
@@ -110,7 +111,7 @@ public class Main {
     return true;
   }
 
-  public static void placeQueen (int posX, int posY, boolean[][] grid) {
+  public static void placeQueen(int posX, int posY, boolean[][] grid) {
     grid[posX][posY] = true;
   }
 
